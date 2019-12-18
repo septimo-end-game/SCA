@@ -18,3 +18,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+// Administradores
+
+Route::resource('admins','AdminControler');
+
+// seguridad
+
+Route::resource('seguridad','SeguridadControler');
