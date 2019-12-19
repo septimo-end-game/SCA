@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('matricula')->unique();
-            $table->string('rol'); // 'administrador', 'seguridad'
+            $table->string('rol'); // 'administrador', 'seguridad', 'empleados'
             $table->rememberToken();
             $table->timestamps();
         });

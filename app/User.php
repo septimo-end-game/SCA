@@ -27,4 +27,19 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function scopeElementos($query)
+    {
+        return $query->where('rol', 'elementos');
+    }
+
+    public function scopeEmpleados($query)
+    {
+        return $query->where('rol', 'empleados');
+    }
+
+    public function scopeAdministradores($query)
+    {
+        return $query->where('rol', 'Administrador');
+    }
 }

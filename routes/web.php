@@ -19,7 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
+Route::get('/createuser', function () {
+	return view('createuser');
+});
 
 
 // Administradores
@@ -28,4 +30,8 @@ Route::resource('admins','AdminControler');
 
 // seguridad
 
-Route::resource('seguridad','SeguridadControler');
+Route::resource('elementos','ElementosControler');
+
+// seguridad
+
+Route::resource('empleados','EmpleadosController');

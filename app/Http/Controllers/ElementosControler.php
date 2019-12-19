@@ -5,17 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 
-class AdminControler extends Controller
+class ElementosControler extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-        //
-        $admins = User::Administradores()->get();
-        return view('admins.index', compact('admins'));
+    public function index()
+    {
+        $elementos = User::elementos()->get();
+        return view('elementos.index', compact('elementos'));
     }
 
     /**
@@ -23,9 +23,9 @@ class AdminControler extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(){
-
-        //return view('admins.index_c');
+    public function create()
+    {
+        //return view('create');
     }
 
     /**

@@ -1,12 +1,17 @@
 <!-- Navigation -->
 <ul class="navbar-nav">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
-      <i class="ni ni-circle-08 text-default"></i> Usuarios
+    <a class="nav-link" href="{{ url('/admins') }}">
+      <i class="ni ni-glasses-2 text-default"></i> Administradores
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./examples/icons.html">
+    <a class="nav-link" href="{{ url('/elementos') }}">
+      <i class="ni ni-circle-08 text-default"></i> Elementos
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url('/empleados') }}">
       <i class="ni ni-badge text-default"></i> Empleados
     </a>
   </li>
