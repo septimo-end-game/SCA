@@ -21,6 +21,15 @@ class UsersTableSeeder extends Seeder
 	        'a_materno' => 'Barrios',
 	        'rol' => 'Administrador'
     	]);
+        User::create([
+            'name' => 'Esme',
+            'email' => 'Esme@hotmail.com',
+            'password' => bcrypt('manzana'),
+            'matricula' => '20152440',
+            'a_paterno' => 'Arias',
+            'a_materno' => 'Gonzales',
+            'rol' => 'Administrador'
+        ]);
         factory(User::class, 15)->create();
     }
 }

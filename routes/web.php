@@ -17,11 +17,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('admins', 'HomeController@index')->name('admins');
 
-Route::get('/createuser', function () {
-	return view('createuser');
-});
+//RUTAS DEL CRUD USUARIOS
+Route::get('/createuser', 'UsersControler@index');
+Route::get('/admins/create', 'ElementosControler@create'); //formulario de registro
+
+
+Route::post('/createuser', 'UsersControler@store'); //Envio de datos del formulario de registro
 
 
 // Administradores

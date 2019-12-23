@@ -28,6 +28,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
+//Query Scopes declarodos para filtar los registros
     public function scopeElementos($query)
     {
         return $query->where('rol', 'elementos');
