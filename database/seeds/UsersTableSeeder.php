@@ -25,11 +25,11 @@ class UsersTableSeeder extends Seeder
             'name' => 'Esme',
             'email' => 'Esme@hotmail.com',
             'password' => bcrypt('manzana'),
-            'matricula' => '20152440',
+            'matricula' => '201524401',
             'a_paterno' => 'Arias',
             'a_materno' => 'Gonzales',
             'rol' => 'Administrador'
         ]);
-        factory(User::class, 15)->create();
+        factory(User::class, 10)->create();
     }
 }

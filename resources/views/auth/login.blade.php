@@ -8,7 +8,7 @@
             <div class="card-body px-lg-5 py-lg-5">
             @if ($errors->any())
                 <div class="alert alert-warning" role="alert">
-                    <strong>Recorcholis! </strong>Usuario y/o Contraseña incorrecta
+                    <strong>Recorcholis! </strong>Usuario y/o Contraseña incorrecta o No existe el usuario
                 </div>
             @else
               <div class="text-center text-muted mb-4">

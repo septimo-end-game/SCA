@@ -21,6 +21,13 @@
 <body>
   <!-- Sidenav -->
   <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
+    @if (Auth::user()->rol == 'Administrador')
+    <div class="col-6 collapse-brand center">
+      <a href="{{ url('/empleados') }}">
+        <h1 class="text-default">SCA</h1>
+      </a>
+    </div>
+    @endif
     <div class="container-fluid">
       <!-- Toggler -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,8 +68,8 @@
         <div class="navbar-collapse-header d-md-none">
           <div class="row">
             <div class="col-6 collapse-brand">
-              <a href="./index.html">
-                <h1>SCA</h1>
+              <a href="{{ url('/empleados') }}">
+                <h1 class="text-default">SCA</h1>
               </a>
             </div>
             <div class="col-6 collapse-close">
@@ -73,19 +80,20 @@
             </div>
           </div>
         </div>
-        <!-- Form -->
-        <form class="mt-4 mb-3 d-md-none">
-          <div class="input-group input-group-rounded input-group-merge">
-            <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Buscar" aria-label="Search">
-            <div class="input-group-prepend">
-              <div class="input-group-text">
-                <span class="fa fa-search"></span>
-              </div>
+        <!-- Form buscar -->
+      <form class="mt-4 mb-3 d-md-none" method="GET" action="{{ url('empleados.index') }}">
+        <div class="input-group input-group-rounded input-group-merge">
+          <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Buscar" aria-label="Search">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <span class="fa fa-search"></span>
             </div>
           </div>
-        </form>
+        </div>
+      </form>
         @include('includes.panel.menu')
       </div>
+
     </div>
   </nav>
   <!-- Main content -->
@@ -94,15 +102,15 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
         <!-- Brand -->
-        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">ADMINISTRADOR</a>
+        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">{{Auth::user()->rol}}</a>
         <!-- Form -->
-        <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
+        <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto" method="GET" action="{{ url('/empleados/') }}">
           <div class="form-group mb-0">
             <div class="input-group input-group-alternative">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fas fa-search"></i></span>
               </div>
-              <input class="form-control" placeholder="Buscar" type="text">
+              <input class="form-control"  type="text" name="matricula" required="">
             </div>
           </div>
         </form>

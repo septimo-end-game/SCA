@@ -12,8 +12,10 @@ class ElementosControler extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //middleware para comprobar que un usuario tenga session iniciada
     public function __construct(){
         $this->middleware('auth');
+        //$this->middleware('admin');
     }
     
     public function index()

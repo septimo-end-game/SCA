@@ -17,24 +17,19 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('admins', 'HomeController@index')->name('admins');
+Route::get('empleados', 'HomeController@index')->name('empleados');
 
-//RUTAS DEL CRUD USUARIOS
-Route::get('/createuser', 'UsersControler@index');
-Route::get('/admins/create', 'ElementosControler@create'); //formulario de registro
+//Grupo de rutas con reglas de navegacion declaradas en middlewares que se encuentran en AdminMiddleware.php y Authenticate.php
+//Route::middleware(['auth', 'admin'])->group(function (){
+	//RUTAS DEL CRUD USUARIOS
+	Route::get('/createuser', 'UsersControler@index');
 
-
-Route::post('/createuser', 'UsersControler@store'); //Envio de datos del formulario de registro
-
-
-// Administradores
-
-Route::resource('admins','AdminControler');
-
-// seguridad
-
-Route::resource('elementos','ElementosControler');
-
-// seguridad
-
-Route::resource('empleados','EmpleadosController');
+	Route::get('/admins/create', 'ElementosControler@create'); //formulario de registro
+	Route::post('/createuser', 'UsersControler@store'); //Envio de datos del formulario de registro
+	// Administradores
+	Route::resource('admins','AdminControler');
+	// seguridad
+	Route::resource('elementos','ElementosControler');
+	// seguridad
+	Route::resource('empleados','EmpleadosController');
+//});

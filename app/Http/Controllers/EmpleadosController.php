@@ -14,11 +14,14 @@ class EmpleadosController extends Controller
      */
     public function __construct(){
         $this->middleware('auth');
+        //$this->middleware('admin');
     }
 
-    public function index()
+    public function index(Request $request)
     {   //Query Scopes para filtar lor registros por rol que se encunetrar declarados en User.php
-        $empleados = User::empleados()->get();
+        //$matricula = $request->get('matricula');
+        $empleados = User::matricula($request->get('matricula'))->orderBy('id','DESC')
+            ->Empleados()->get();
         return view('empleados.index', compact('empleados'));
     }
 
@@ -27,9 +30,12 @@ class EmpleadosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function find($matricula)
     {
-        //return view('createuser');
+        
+        $matricula = User::empleados()->findOrFail($matricula);
+        
+        return view('empleados.find', compact('matricula'));
     }
 
     /**

@@ -60,5 +60,7 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        //Se declaro El middleware AdminMiddleware.php para restringir el libre acceso de navegacion a usuarios que no sean Administradores y que no esten registrados
+        'admin' => \App\Http\Middleware\AdminMiddleware::class,
     ];
 }

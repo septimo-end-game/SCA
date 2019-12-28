@@ -1,5 +1,7 @@
 <!-- Navigation -->
+
 <ul class="navbar-nav">
+@if (Auth::user()->rol == 'Administrador')
   <li class="nav-item">
     <a class="nav-link" href="{{ url('/admins') }}">
       <i class="ni ni-glasses-2 text-default"></i> Administradores
@@ -10,13 +12,15 @@
       <i class="ni ni-circle-08 text-default"></i> Elementos
     </a>
   </li>
+@endif
+
   <li class="nav-item">
     <a class="nav-link" href="{{ url('/empleados') }}">
       <i class="ni ni-badge text-default"></i> Empleados
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./examples/icons.html">
+    <a class="nav-link" href="#">
       <i class="ni ni-collection text-default"></i> Bitacora
     </a>
   </li>
@@ -24,11 +28,11 @@
 <!-- Divider -->
 <hr class="my-3">
 <!-- Heading -->
-<h6 class="navbar-heading text-muted">Documentation</h6>
+<h6 class="navbar-heading text-muted">Documentación</h6>
 <!-- Navigation -->
 <ul class="navbar-nav mb-md-3">
   <li class="nav-item">
-    <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html">
+    <a class="nav-link" href="#">
       <i class="ni ni-spaceship"></i> Acerca de
     </a>
   </li>

@@ -29,7 +29,7 @@ class User extends Authenticatable
     ];
 
 
-//Query Scopes declarodos para filtar los registros
+//Query Scopes declarados para filtar los registros y facilitar el uso de eloquent
     public function scopeElementos($query)
     {
         return $query->where('rol', 'elementos');
@@ -44,4 +44,14 @@ class User extends Authenticatable
     {
         return $query->where('rol', 'Administrador');
     }
+
+    public function scopeMatricula($query,  $matricula)
+    {
+       if (trim($matricula) != "") {
+           $query->where('matricula', "LIKE", "%$matricula%");
+       }
+       
+       
+    }
+
 }
