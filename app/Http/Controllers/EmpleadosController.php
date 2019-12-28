@@ -7,11 +7,7 @@ use App\User;
 
 class EmpleadosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function __construct(){
         $this->middleware('auth');
         //$this->middleware('admin');
@@ -25,36 +21,12 @@ class EmpleadosController extends Controller
         return view('empleados.index', compact('empleados'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function find($matricula)
-    {
-        
-        $matricula = User::empleados()->findOrFail($matricula);
-        
-        return view('empleados.find', compact('matricula'));
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //

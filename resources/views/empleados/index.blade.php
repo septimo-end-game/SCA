@@ -6,7 +6,7 @@
     <div class="card-header border-0">
       <div class="row align-items-center">
         <div class="col">
-          <h3 class="mb-0">Empleados</h3>
+          <a class="nav-link" href="{{ url('/empleados') }}">Empleados
         </div>
         <div class="col text-right">
           <a href="{{ url('createuser') }}" class="btn btn-sm btn-success">

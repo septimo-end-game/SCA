@@ -44,7 +44,7 @@ class User extends Authenticatable
     {
         return $query->where('rol', 'Administrador');
     }
-
+//Scope para buscar
     public function scopeMatricula($query,  $matricula)
     {
        if (trim($matricula) != "") {
