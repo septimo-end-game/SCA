@@ -81,7 +81,7 @@
           </div>
         </div>
         <!-- Form buscar -->
-      <form class="mt-4 mb-3 d-md-none" method="GET" action="{{ url('empleados.index') }}">
+      <form class="mt-4 mb-3 d-md-none" method="GET" action="{{ url('/empleados/') }}">
         <div class="input-group input-group-rounded input-group-merge">
           <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Buscar" aria-label="Search">
           <div class="input-group-prepend">
@@ -130,7 +130,7 @@
                 <i class="ni ni-user-run"></i>
                 <span>Cerrar sesión</span>
               </a>
-              <form action="{{ url('/logout') }}" method="POST"  style="display: none;" id="logout-form">
+              <form action="{{ url('/logout') }}" method="POST" style="display: none;" id="logout-form">
                 @csrf
                 <input type="submit" value="logout" style="display: none;">
               </form>

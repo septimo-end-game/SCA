@@ -15,7 +15,7 @@ class ElementosControler extends Controller
     //middleware para comprobar que un usuario tenga session iniciada
     public function __construct(){
         $this->middleware('auth');
-        //$this->middleware('admin');
+        $this->middleware('admin');
     }
     
     public function index()

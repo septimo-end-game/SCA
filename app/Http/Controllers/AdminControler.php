@@ -14,7 +14,7 @@ class AdminControler extends Controller
      */
     public function __construct(){
         $this->middleware('auth');
-        //$this->middleware('admin');
+        $this->middleware('admin');
     }
     //Funcion para mostrar la vista donde esta la lista de los datos
     public function index(){

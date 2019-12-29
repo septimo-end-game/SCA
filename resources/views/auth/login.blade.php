@@ -51,9 +51,6 @@
                     </a>
                 @endif
             </div>
-            <div class="col-6 text-right">
-              <a href="{{ route('register') }}" class="text-light">Registrate</a>
-            </div>
           </div>
         </div>
       </div>

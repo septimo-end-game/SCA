@@ -8,11 +8,13 @@
         <div class="col">
           <a class="nav-link" href="{{ url('/empleados') }}">Empleados
         </div>
+        @if (Auth::user()->rol == 'Administrador')
         <div class="col text-right">
           <a href="{{ url('createuser') }}" class="btn btn-sm btn-success">
             Nuevo
           </a>
         </div>
+        @endif
       </div>
     </div>
     <div class="table-responsive">
@@ -24,7 +26,9 @@
             <th scope="col">Apellido paterno</th>
             <th scope="col">Email</th>
             <th scope="col">Matricula</th>
+            @if (Auth::user()->rol == 'Administrador')
             <th scope="col">Opciones</th>
+            @endif
           </tr>
         </thead>
         <tbody>
@@ -42,6 +46,7 @@
             <td>
               {{  $empleado->matricula }}
             </td>
+            @if (Auth::user()->rol == 'Administrador')
             <td>
               <form action="{{ url('/empleados/'.$empleado->id) }}" method="POST">
                 @csrf
@@ -50,6 +55,7 @@
                 <button class="btn btn-sm btn-danger" type="submit">Emininar</button>
               </form>
             </td>
+            @endif
           </tr>
           @endforeach
         </tbody>

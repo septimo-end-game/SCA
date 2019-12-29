@@ -7,10 +7,9 @@ use App\User;
 
 class EmpleadosController extends Controller
 {
-
+    //Funcion que restringe la navegavion entre rutas por la url, para que solo los usuarios registrados tengan libre navegacion
     public function __construct(){
         $this->middleware('auth');
-        //$this->middleware('admin');
     }
 
     public function index(Request $request)
