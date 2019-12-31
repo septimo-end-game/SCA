@@ -16,12 +16,7 @@
 
   <li class="nav-item">
     <a class="nav-link" href="{{ url('/empleados') }}">
-      <i class="ni ni-badge text-default"></i> Empleados
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">
-      <i class="ni ni-collection text-default"></i> Bitacora
+      <i class="ni ni-badge text-default"></i> Estudiantes
     </a>
   </li>
 </ul>

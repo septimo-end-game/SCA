@@ -57,6 +57,7 @@ class EmpleadosController extends Controller
         $user = User::empleados()->findOrFail($id);
         //almacenar en la variable data el objeto request en forma de arreglo, que a su vez esta tomando atravez de la funcion only, solo los datos del inputs del formulario.                       
         $data = $request->only('name','a_paterno','a_materno','email','matricula','rol');
+
         //almacenando en la variable password solo el valor del input de la contraseña (ya que es un valor opcional).
         $password = $request->input('password');
         //si se ingreso un nueva contraseña para actualizarla
@@ -65,8 +66,10 @@ class EmpleadosController extends Controller
             $data['password'] = bcrypt($password);
         }
         //cargar el arreglo a la consulta de actialización
-        $user->fill($data);
+        //$user->fill($data);
+
         $user->save();  // Ejecutar consulta de Actualizacion
+
         return redirect('/empleados'); //Regresar a la vista anterior
     }
 

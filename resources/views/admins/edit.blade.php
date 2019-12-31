@@ -46,7 +46,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="text" name="email" class="form-control" value="{{ $admin->email }}" required>
+              <input type="email" name="email" class="form-control" value="{{ $admin->email }}" required>
             </div>
             <div class="form-group">
               <label for="matricula">Matricula</label>
@@ -54,7 +54,7 @@
             </div>
             <div class="form-group">
               <label for="matricula">Contraseña</label>
-              <input type="text" name="password" class="form-control" value="" placeholder="Ingrese un valor solo si desea modificar la contraseña" ></input>
+              <input type="password" name="password" class="form-control" value="" placeholder="Ingrese un valor solo si desea modificar la contraseña" ></input>
             </div>
             <button type="submit" class="btn btn-lg btn-success">Actualizar</button>
           </div>

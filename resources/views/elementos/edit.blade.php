@@ -51,11 +51,11 @@
             </div>
             <div class="form-group">
               <label for="matricula">Matricula</label>
-              <input type="text" name="matricula" class="form-control" value="{{ $elemento->matricula }}" required>
+              <input type="email" name="matricula" class="form-control" value="{{ $elemento->matricula }}" required>
             </div>
             <div class="form-group">
               <label for="matricula">Contraseña</label>
-              <input type="text" name="password" class="form-control" value="" placeholder="Ingrese un valor solo si desea modificar la contraseña"></input>
+              <input type="password" name="password" class="form-control" value="" placeholder="Ingrese un valor solo si desea modificar la contraseña"></input>
             </div>
             <button type="submit" class="btn btn-lg btn-success">Actualizar</button>
           </div>

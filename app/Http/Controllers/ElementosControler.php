@@ -64,6 +64,7 @@ class ElementosControler extends Controller
      */
     public function edit($id)
     {
+        
         $elemento = User::elementos()->findOrFail($id);
         return view('elementos.edit', compact('elemento'));
     }

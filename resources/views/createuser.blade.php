@@ -11,7 +11,7 @@
       }
       else if ($(this).val()=='Administrador'){
         $("#txtRol").removeAttr('disabled');
-        $("#txtRol").focus();
+        
       }else{
         $("#txtRol").attr('disabled','disabled');
       }
@@ -41,13 +41,13 @@
           </ul>
         </div>
       @endif
-      <form role="form"  method="POST" action="{{ url('/createuser') }}">
+      <form role="form" autocomplete="off"  method="POST" action="{{ url('/createuser') }}">
         @csrf
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
               <label for="name">Nombre</label>
-              <input type="text" name="name" class="form-control" value="{{ old('name') }}" required>
+              <input type="text" name="name" class="form-control" value="{{ old('name') }}" required autofocus>
             </div>
             <div class="form-group">
               <label for="a_paterno">Apellido paterno</label>
@@ -62,7 +62,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="text" name="email" class="form-control" value="{{ old('email') }}" required>
+              <input type="email" name="email" class="form-control" value="{{ old('email') }}" required>
             </div>
             <div class="form-group">
               <label for="matricula">Matricula</label>
@@ -71,14 +71,16 @@
             <div class="form-group">
               <label for="matricula">Rol: </label>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="radio" class="op" name="rol" value="elementos">
-                <label for="customRadio5">Elemento de seguridad</label>
+                <input type="radio" class="op" name="rol" value="Administrador">
+                <label for="customRadio5">Administrador</label>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" class="op" name="rol" value="elementos" checked>
+                <label for="customRadio6">  Elementos</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="radio" class="op" name="rol" value="empleados" checked>
-                <label for="customRadio6">  Empleado</label>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="radio" class="op" name="rol" value="Administrador" checked>
-                <label for="customRadio6">  Administrador</label>
+                <label for="customRadio6">  Estudiantes</label>
  
             </div>
             <div class="form-group">
